@@ -1,3 +1,4 @@
+
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -58,19 +59,7 @@ return {
 					vim.g.zig_fmt_parse_errors = 0
 					vim.g.zig_fmt_autosave = 0
 				end,
-				["volar"] = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.volar.setup({
-						capabilities = capabilities,
-						filetypes = { "vue" }, -- Подключаем только для .vue файлов
-						root_dir = lspconfig.util.root_pattern("package.json", "vue.config.js", ".git"),
-						settings = {
-							volar = {
-								autoFormat = true,
-							},
-						},
-					})
-				end,
+
 
 				["lua_ls"] = function()
 					local lspconfig = require("lspconfig")
