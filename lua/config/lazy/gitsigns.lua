@@ -1,3 +1,5 @@
+-- signs what changed in git
+
 return {
 	"lewis6991/gitsigns.nvim",
 

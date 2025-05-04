@@ -1,3 +1,5 @@
+-- very fast thing.
+
 return {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
