@@ -1,4 +1,3 @@
-
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
@@ -44,22 +43,17 @@ return {
 					})
 				end,
 
-				zls = function()
-					local lspconfig = require("lspconfig")
-					lspconfig.zls.setup({
-						root_dir = lspconfig.util.root_pattern(".git", "build.zig", "zls.json"),
-						settings = {
-							zls = {
-								enable_inlay_hints = true,
-								enable_snippets = true,
-								warn_style = true,
+				volar = function()
+					require("lspconfig").volar.setup({
+            capabilities = capabilities,
+						filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+						init_options = {
+							vue = {
+								hybridMode = false,
 							},
 						},
 					})
-					vim.g.zig_fmt_parse_errors = 0
-					vim.g.zig_fmt_autosave = 0
 				end,
-
 
 				["lua_ls"] = function()
 					local lspconfig = require("lspconfig")
@@ -67,9 +61,17 @@ return {
 						capabilities = capabilities,
 						settings = {
 							Lua = {
-								runtime = { version = "Lua 5.1" },
 								diagnostics = {
-									globals = { "bit", "vim", "it", "describe", "before_each", "after_each" },
+									globals = { "vim" },
+								},
+								format = {
+									enable = true,
+									-- Put format options here
+									-- NOTE: the value should be STRING!!
+									defaultConfig = {
+										indent_style = "space",
+										indent_size = "2",
+									},
 								},
 							},
 						},
@@ -93,6 +95,7 @@ return {
 				["<C-Space>"] = cmp.mapping.complete(),
 			}),
 			sources = cmp.config.sources({
+				{ name = "copilot", group_index = 2 },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- For luasnip users.
 			}, {
