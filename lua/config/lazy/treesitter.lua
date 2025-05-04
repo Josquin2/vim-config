@@ -14,6 +14,8 @@ return {
 				"jsdoc",
 				"bash",
 				"vue",
+        "css",
+        "scss"
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
