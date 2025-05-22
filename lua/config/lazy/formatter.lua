@@ -12,7 +12,7 @@ return {
 				typescript = { "prettier" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
-				vue = { "prettier" },
+				vue = { "stylistic" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
