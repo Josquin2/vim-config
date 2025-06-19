@@ -1,7 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
-		"stevearc/conform.nvim",
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"hrsh7th/cmp-nvim-lsp",
@@ -15,9 +14,6 @@ return {
 	},
 
 	config = function()
-		require("conform").setup({
-			formatters_by_ft = {},
-		})
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
@@ -44,7 +40,7 @@ return {
 
 				volar = function()
 					require("lspconfig").volar.setup({
-            capabilities = capabilities,
+						capabilities = capabilities,
 						filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 						init_options = {
 							vue = {
@@ -62,15 +58,6 @@ return {
 							Lua = {
 								diagnostics = {
 									globals = { "vim" },
-								},
-								format = {
-									enable = true,
-									-- Put format options here
-									-- NOTE: the value should be STRING!!
-									defaultConfig = {
-										indent_style = "space",
-										indent_size = "2",
-									},
 								},
 							},
 						},
@@ -103,7 +90,7 @@ return {
 		})
 
 		vim.diagnostic.config({
-			-- update_in_insert = true,
+			update_in_insert = true,
 			float = {
 				focusable = false,
 				style = "minimal",
