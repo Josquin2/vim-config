@@ -8,11 +8,8 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "eslint" },
-				typescript = { "eslint" },
 				javascriptreact = { "prettier" },
 				typescriptreact = { "prettier" },
-				vue = { "eslint" },
 				svelte = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
@@ -21,7 +18,6 @@ return {
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
