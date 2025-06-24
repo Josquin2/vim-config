@@ -42,7 +42,8 @@ return {
         "rust_analyzer",
         "gopls",
         "vue_ls",
-        "eslint"
+        "eslint",
+        "ts_ls"
       },
       handlers = {
         function(server_name) -- default handler (optional)
