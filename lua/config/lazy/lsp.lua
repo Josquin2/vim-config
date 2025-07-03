@@ -54,7 +54,30 @@ return {
 
       },
 
+
     })
+
+    vim.lsp.config('ts_ls', {
+      init_options = {
+        plugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = "/opt/homebrew/lib/node_modules/@vue/typescript-plugin", -- macos
+            languages = { "javascript", "typescript", "vue" },
+          },
+        },
+      },
+      filetypes = {
+        "javascript",
+        "typescript",
+        "vue",
+      },
+    })
+
+    vim.lsp.config('vue_ls', {
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+    })
+
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
     cmp.setup({
