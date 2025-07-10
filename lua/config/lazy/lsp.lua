@@ -43,7 +43,8 @@ return {
         "gopls",
         "vue_ls",
         "eslint",
-        "ts_ls"
+        "ts_ls",
+        "cssls"
       },
       handlers = {
         function(server_name) -- default handler (optional)
