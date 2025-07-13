@@ -59,7 +59,8 @@ return {
     })
 
 
-    local vue_language_server_path = '/opt/homebrew/lib/node_modules/@vue/language-server'
+    local vue_language_server_path = '/opt/homebrew/lib/node_modules/@vue/language-server' -- macos
+    -- local vue_language_server_path = 'usr/lib/node_modules/@vue/language-server' -- linux
     local vue_plugin = {
       name = '@vue/typescript-plugin',
       location = vue_language_server_path,
