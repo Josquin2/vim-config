@@ -44,7 +44,8 @@ return {
         "vue_ls",
         "eslint",
         "vtsls",
-        "cssls"
+        "cssls",
+        "jsonls"
       },
       handlers = {
         function(server_name) -- default handler (optional)
