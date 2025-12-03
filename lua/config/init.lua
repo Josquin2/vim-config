@@ -34,9 +34,15 @@ autocmd({ "BufWritePre" }, {
 })
 
 autocmd("BufEnter", {
-	callback = function()
-		vim.cmd.colorscheme("github_dark_default")
-	end,
+  callback = function()
+    vim.cmd("colorscheme github_dark_colorblind")
+    local overrides = {
+      LineNr = { fg = "#af8700" },
+      StatusLine = { bg ="#262626", fg="#af8700" },
+      StatusLineNC = { bg="#262626", fg="#5b5b5b"},
+    }
+    for g, opts in pairs(overrides) do vim.api.nvim_set_hl(0, g, opts) end
+  end,
 })
 
 autocmd("LspAttach", {
