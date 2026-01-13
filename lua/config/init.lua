@@ -35,9 +35,8 @@ autocmd({ "BufWritePre" }, {
 
 autocmd("BufEnter", {
   callback = function()
-    vim.cmd("colorscheme github_dark_colorblind")
+    vim.cmd("colorscheme github_dark_default")
     local overrides = {
-      LineNr = { fg = "#af8700" },
       StatusLine = { bg ="#262626", fg="#af8700" },
       StatusLineNC = { bg="#262626", fg="#5b5b5b"},
     }
