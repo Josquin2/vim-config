@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+  branch = 'master',
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
@@ -14,8 +15,8 @@ return {
 				"jsdoc",
 				"bash",
 				"vue",
-        "css",
-        "scss"
+	       "css",
+	       "scss"
 			},
 
 			-- Install parsers synchronously (only applied to `ensure_installed`)
